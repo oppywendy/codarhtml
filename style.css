@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid{
+    display: grid;
+    height: 600px;
+    grid-template-areas: 
+    "b1  b1  b2  ."
+    ".  .  b2  ."
+    ".  .  .  ."
+    ".  .  .  ."
+    ;
+}
+
+.box1{
+    background-color: aquamarine;
+    grid-area: b1;
+}
+
+.box2{
+    background-color: blue;
+    grid-area: b2;
+}
+
+.animation{
+    background-color: aqua;
+    height: 40rem;
+    justify-content: center;
+    align-items: center;
+    animation-name: fade;
+    animation-duration: 5s;
+
+}
+
+@keyframes slide {
+from {
+    transform: translateX(50rem);
+} to {
+    transform: translateX(0);
+}
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+
+.rotate{
+    height: 15rem;
+    width: 15rem;
+    margin-top: 2rem;
+    background-color: blueviolet;
+    color: brown;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: rotate;
+    animation-duration: 5s;
+
+}
+
+@keyframes rotate {
+    25%{
+border-radius: 4rem;
+    } 50%{
+transform: rotate(360deg);
+    } 100%{
+transform: translateX(5rem);
+    }
+}
+
+.loadingbody{
+    height: 100vh;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 2px;
+    animation-name: load;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+.load:nth-child(1){
+    background-color: aqua;
+}
+
+.load:nth-child(2){
+    background-color: purple;
+    animation-delay: 0.4s;
+}
+
+.load:nth-child(3){
+    background-color: blue;
+    animation-delay: 0.4s;
+}
+
+@keyframes load{
+    50%{
+transform: translateY(-5rem);
+    } 100%{
+        transform: translateY(0);
+    }
+}
